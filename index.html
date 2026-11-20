@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLU DIGITAL TOOLS — Wedding, Invitation & Greeting Card Studio Pro (150+ Templates)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Great+Vibes&family=Montserrat:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@500;600;700;800&family=Noto+Sans+Gujarati:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Poppins:wght@400;500;600;700;800&family=Rozha+One&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'Noto Sans Devanagari', 'Noto Sans Gujarati', 'sans-serif'],
+                        cinzel: ['Cinzel', 'serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                        vibes: ['Great Vibes', 'cursive'],
+                        rozha: ['Rozha One', 'Noto Sans Devanagari', 'serif'],
+                        devanagari: ['Noto Sans Devanagari', 'sans-serif'],
+                        gujarati: ['Noto Sans Gujarati', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.3); }
+        ::-webkit-scrollbar-thumb { background: rgba(217, 119, 6, 0.55); border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(217, 119, 6, 0.85); }
+
+        .studio-checker-bg {
+            background-image:
+                linear-gradient(45deg, rgba(148, 163, 184, 0.08) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(148, 163, 184, 0.08) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(148, 163, 184, 0.08) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(148, 163, 184, 0.08) 75%);
+            background-size: 22px 22px;
+            background-position: 0 0, 0 11px, 11px -11px, -11px 0;
+        }
+
+        .card-stage-shadow {
+            box-shadow: 0 28px 60px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.14);
+        }
+
+        /* Never apply Tailwind 'hidden' class to #printMountArea so @media print can display it cleanly */
+        #printMountArea {
+            display: none;
+        }
+
+        body.is-printing #studioHeader,
+        body.is-printing #studioMain,
+        body.is-printing #printModal,
+        body.is-printing #toastPopup {
+            display: none !important;
+        }
+
+        body.is-printing #printMountArea {
+            display: block !important;
+            width: 100% !important;
+            background: #ffffff !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                box-sizing: border-box !important;
+            }
+            html, body {
+                margin: 0 !important;
+                padding: 0 !important;
+                height: auto !important;
+                overflow: visible !important;
+                background: #ffffff !important;
+            }
+            #studioHeader,
+            #studioMain,
+            #printModal,
+            #toastPopup {
+                display: none !important;
+            }
+            #printMountArea {
+                display: block !important;
+                width: 100% !important;
+                background: #ffffff !important;
+            }
+            .invite-print-sheet {
+                width: 100% !important;
+                margin: 0 auto !important;
+                padding: 4mm !important;
+                page-break-after: always !important;
+                break-after: page !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 6mm !important;
+            }
+            .invite-print-sheet:last-child {
+                page-break-after: auto !important;
+                break-after: auto !important;
+            }
+            @page {
+                margin: 5mm;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950 min-h-screen flex flex-col overflow-x-hidden">
+
+    <!-- TOP STUDIO HEADER -->
+    <header id="studioHeader" class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-3 sm:px-6 py-2.5">
+        <div class="max-w-[1920px] mx-auto flex flex-wrap items-center justify-between gap-2">
+            <!-- Brand Identity -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-600 via-amber-500 to-yellow-500 flex items-center justify-center shadow-lg shadow-amber-500/25 text-white font-black text-lg tracking-wider">
+                    SD
+                </div>
+                <div>
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <span class="px-2 py-0.5 text-[10px] font-black uppercase tracking-wider rounded-md bg-rose-600 text-white">
+                            SOLU DIGITAL TOOLS
+                        </span>
+                        <h1 class="font-extrabold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white">
+                            Wedding, Invitation & Greeting Card Studio Pro <span class="text-amber-500">(150+ Templates)</span>
+                        </h1>
+                    </div>
+                    <p class="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
+                        100% Offline Studio • Hindi, Gujarati & English • 300-DPI Print (5×7 / A5) & WhatsApp Square E-Cards
+                    </p>
+                </div>
+            </div>
+
+            <!-- Action Controls -->
+            <div class="flex items-center flex-wrap gap-1.5 sm:gap-2">
+                <div class="hidden xl:flex items-center gap-2 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-lg text-xs">
+                    <span class="text-slate-400">Template:</span>
+                    <span id="headerTplBadge" class="font-bold text-amber-600 dark:text-amber-400">#001 Royal Vivah Arch</span>
+                </div>
+
+                <!-- Download HD PNG -->
+                <button onclick="downloadInvitePNG()" class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm transition active:scale-95">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    <span>Download HD PNG</span>
+                </button>
+
+                <!-- Print & PDF Preview Modal -->
+                <button onclick="openPrintModal()" class="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-extrabold bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-sm transition active:scale-95">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                    <span>Print / Save PDF</span>
+                </button>
+
+                <!-- Theme Toggle -->
+                <button onclick="toggleStudioTheme()" title="Toggle Light/Dark Mode" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition">
+                    <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN STUDIO WORKSPACE -->
+    <main id="studioMain" class="flex-1 max-w-[1920px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-0 lg:h-[calc(100vh-61px)] overflow-hidden">
+
+        <!-- LEFT 5-COLUMN CONTROLS PANEL -->
+        <aside class="lg:col-span-5 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col lg:h-full overflow-hidden">
+
+            <!-- 4 Navigation Tabs -->
+            <nav class="grid grid-cols-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/70 p-1 gap-1">
+                <button onclick="switchTab('templates')" id="tabBtn-templates" class="flex flex-col items-center justify-center py-2 px-1 rounded-lg text-[11px] font-bold transition bg-rose-600 text-white shadow">
+                    <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm10 0a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zm10 0a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/></svg>
+                    <span>150+ Designs</span>
+                </button>
+                <button onclick="switchTab('content')" id="tabBtn-content" class="flex flex-col items-center justify-center py-2 px-1 rounded-lg text-[11px] font-bold transition text-slate-600 dark:text-slate-400 hover:bg-slate-200/70 dark:hover:bg-slate-800">
+                    <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                    <span>Invite Details</span>
+                </button>
+                <button onclick="switchTab('emblem')" id="tabBtn-emblem" class="flex flex-col items-center justify-center py-2 px-1 rounded-lg text-[11px] font-bold transition text-slate-600 dark:text-slate-400 hover:bg-slate-200/70 dark:hover:bg-slate-800">
+                    <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <span>Motif & Photo</span>
+                </button>
+                <button onclick="switchTab('design')" id="tabBtn-design" class="flex flex-col items-center justify-center py-2 px-1 rounded-lg text-[11px] font-bold transition text-slate-600 dark:text-slate-400 hover:bg-slate-200/70 dark:hover:bg-slate-800">
+                    <svg class="w-4 h-4 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                    <span>Style & QR</span>
+                </button>
+            </nav>
+
+            <!-- TAB 1: 150+ TEMPLATES BROWSER -->
+            <div id="tabPane-templates" class="tab-pane flex-1 flex flex-col overflow-hidden p-3 sm:p-4 space-y-3">
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <div class="relative flex-1">
+                        <svg class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        <input type="text" id="tplSearchBox" oninput="filterTemplatesGrid()" placeholder="Search 150 cards (Vivah, Birthday, Griha, Diwali, #025)..." class="w-full pl-9 pr-3 py-2 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-amber-500">
+                    </div>
+                    <div class="flex rounded-lg bg-slate-100 dark:bg-slate-800 p-1 border border-slate-200 dark:border-slate-700 text-[11px] font-bold">
+                        <button onclick="setRatioFilter('all')" id="ratioBtn-all" class="px-2.5 py-1 rounded-md bg-rose-600 text-white">All</button>
+                        <button onclick="setRatioFilter('portrait')" id="ratioBtn-portrait" class="px-2.5 py-1 rounded-md text-slate-600 dark:text-slate-300">5×7 Card</button>
+                        <button onclick="setRatioFilter('square')" id="ratioBtn-square" class="px-2.5 py-1 rounded-md text-slate-600 dark:text-slate-300">WhatsApp 1:1</button>
+                    </div>
+                </div>
+
+                <!-- 8 Category Filter Pills -->
+                <div id="categoryPillsBox" class="flex items-center gap-1.5 overflow-x-auto pb-1"></div>
+
+                <!-- Count & Surprise Button -->
+                <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 px-1">
+                    <span id="tplCountLabel">Showing 150 of 150 templates</span>
+                    <button onclick="pickRandomInviteTemplate()" class="text-amber-600 dark:text-amber-400 hover:underline font-bold flex items-center gap-1">
+                        <span>🎲 Surprise Design</span>
+                    </button>
+                </div>
+
+                <!-- 150 Visual SVG Mini-Cards Grid -->
+                <div id="templatesCardsGrid" class="flex-1 overflow-y-auto grid grid-cols-2 sm:grid-cols-3 gap-2.5 pr-1 pb-6"></div>
+            </div>
+
+            <!-- TAB 2: MULTILINGUAL INVITATION CONTENT & PRESETS -->
+            <div id="tabPane-content" class="tab-pane hidden flex-1 overflow-y-auto p-3 sm:p-4 space-y-4">
+                <!-- Multilingual One-Click Presets -->
+                <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-extrabold text-amber-600 dark:text-amber-400">✨ Multilingual Quick Presets (1-Click Fill)</span>
+                        <span class="text-[10px] text-slate-500">Hindi • Gujarati • English</span>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
+                        <button onclick="loadInvitePreset('hindi_vivah')" class="px-2 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-rose-600 hover:text-white text-[11px] font-bold border border-slate-200 dark:border-slate-700 transition">🙏 शुभ विवाह (Hindi)</button>
+                        <button onclick="loadInvitePreset('gujarati_lagna')" class="px-2 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-rose-600 hover:text-white text-[11px] font-bold border border-slate-200 dark:border-slate-700 transition">🪔 શુભ લગ્ન (Gujarati)</button>
+                        <button onclick="loadInvitePreset('english_wedding')" class="px-2 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-rose-600 hover:text-white text-[11px] font-bold border border-slate-200 dark:border-slate-700 transition">💍 Royal Wedding (EN)</button>
+                        <button onclick="loadInvitePreset('birthday_party')" class="px-2 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-rose-600 hover:text-white text-[11px] font-bold border border-slate-200 dark:border-slate-700 transition">🎂 Birthday Party</button>
+                        <button onclick="loadInvitePreset('griha_pravesh')" class="px-2 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-rose-600 hover:text-white text-[11px] font-bold border border-slate-200 dark:border-slate-700 transition">🏡 गृह प्रवेश (Griha)</button>
+                        <button onclick="loadInvitePreset('diwali_wishes')" class="px-2 py-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-rose-600 hover:text-white text-[11px] font-bold border border-slate-200 dark:border-slate-700 transition">🪔 Diwali Greeting</button>
+                    </div>
+                </div>
+
+                <!-- Sacred Mantra & Event Title -->
+                <div class="space-y-3">
+                    <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-400 border-b border-slate-200 dark:border-slate-800 pb-1">1. Sacred Invocation & Main Heading</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="sm:col-span-2">
+                            <label class="block text-[11px] font-semibold mb-1">Top Invocation / Shloka / Mantra</label>
+                            <input type="text" id="inp_mantra" oninput="syncInviteFields()" value="|| श्री गणेशाय नमः ||" class="w-full px-3 py-2 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-bold text-amber-600 dark:text-amber-400">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-[11px] font-semibold mb-1">Event / Celebration Title *</label>
+                            <input type="text" id="inp_eventTitle" oninput="syncInviteFields()" value="SHUBH VIVAH INVITATION" class="w-full px-3 py-2 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-extrabold">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-[11px] font-semibold mb-1">Host / Parents Blessing Line</label>
+                            <textarea id="inp_hostLine" oninput="syncInviteFields()" rows="2" class="w-full px-3 py-2 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">Smt. Sunita Devi & Shri Rajeshwar Prasad Sharma cordially invite you to grace the auspicious wedding ceremony of their beloved son</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Honoree / Bride & Groom Names -->
+                <div class="space-y-3 pt-1">
+                    <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-400 border-b border-slate-200 dark:border-slate-800 pb-1">2. Couple / Honoree Names</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">Primary Name (Groom / Child)</label>
+                            <input type="text" id="inp_personOne" oninput="syncInviteFields()" value="Chiranjeevi Aarav" class="w-full px-2.5 py-2 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-rose-500/40 font-extrabold">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">Connector (weds / & / turns)</label>
+                            <input type="text" id="inp_connector" oninput="syncInviteFields()" value="weds" class="w-full px-2.5 py-2 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">Second Name (Bride / Leave blank)</label>
+                            <input type="text" id="inp_personTwo" oninput="syncInviteFields()" value="Ayushmati Ananya" class="w-full px-2.5 py-2 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-rose-500/40 font-extrabold">
+                        </div>
+                        <div class="sm:col-span-3">
+                            <label class="block text-[11px] font-semibold mb-1">Family / Parentage Sub-Details</label>
+                            <input type="text" id="inp_familySub" oninput="syncInviteFields()" value="(D/o Smt. Kavita & Shri Mahendra Verma, New Delhi)" class="w-full px-3 py-2 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Date, Time, Events & Venue -->
+                <div class="space-y-3 pt-1">
+                    <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-400 border-b border-slate-200 dark:border-slate-800 pb-1">3. Date, Muhurat, Venue & RSVP</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">Date & Day</label>
+                            <input type="text" id="inp_eventDate" oninput="syncInviteFields()" value="Sunday, 14th December 2026" class="w-full px-3 py-2 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-bold">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">Time / Shubh Muhurat</label>
+                            <input type="text" id="inp_eventTime" oninput="syncInviteFields()" value="Baraat: 7:00 PM • Dinner: 8:30 PM" class="w-full px-3 py-2 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-[11px] font-semibold mb-1">Sub-Events / Programme Highlights (Optional)</label>
+                            <input type="text" id="inp_subEvents" oninput="syncInviteFields()" value="Haldi & Mehendi: 12 Dec • Sangeet Sandhya: 13 Dec (7:30 PM)" class="w-full px-3 py-2 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-[11px] font-semibold mb-1">Venue Name & Full Address</label>
+                            <textarea id="inp_venueAddress" oninput="syncInviteFields()" rows="2" class="w-full px-3 py-2 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">The Imperial Grand Palace & Lawns, NH-48, Gurugram, Haryana</textarea>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">RSVP / Darshanabhilashi / Contact</label>
+                            <input type="text" id="inp_rsvpText" oninput="syncInviteFields()" value="RSVP: Sharma Family • +91 98765 43210" class="w-full px-3 py-2 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">Google Maps Link / RSVP QR Text</label>
+                            <input type="text" id="inp_qrLink" oninput="syncInviteFields()" value="https://maps.google.com/?q=The+Imperial+Grand+Palace+Gurugram" class="w-full px-3 py-2 text-xs rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: SACRED MOTIFS, COUPLE PHOTO & FRAME STUDIO -->
+            <div id="tabPane-emblem" class="tab-pane hidden flex-1 overflow-y-auto p-3 sm:p-4 space-y-4">
+                <!-- Sacred & Celebratory Vector Emblems -->
+                <div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-xs font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400">1. Sacred & Celebratory Top Motif</h3>
+                            <p class="text-[11px] text-slate-500">Crisp 300-DPI vector symbols drawn directly on card</p>
+                        </div>
+                        <label class="flex items-center gap-1.5 text-xs font-bold cursor-pointer">
+                            <input type="checkbox" id="chk_showMotif" checked onchange="syncDesignControls()" class="accent-amber-500">
+                            <span>Show Motif</span>
+                        </label>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 text-xs">
+                        <button onclick="selectVectorMotif('ganesha')" id="motifBtn-ganesha" class="motif-btn p-2.5 rounded-xl border font-bold text-center transition bg-amber-500/15 border-amber-500 text-amber-600 dark:text-amber-300">🙏 Shri Ganesha</button>
+                        <button onclick="selectVectorMotif('om')" id="motifBtn-om" class="motif-btn p-2.5 rounded-xl border font-bold text-center transition bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700">🕉️ Sacred Om</button>
+                        <button onclick="selectVectorMotif('swastik')" id="motifBtn-swastik" class="motif-btn p-2.5 rounded-xl border font-bold text-center transition bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700">卐 Shubh Swastik</button>
+                        <button onclick="selectVectorMotif('rings')" id="motifBtn-rings" class="motif-btn p-2.5 rounded-xl border font-bold text-center transition bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700">💍 Wedding Rings</button>
+                        <button onclick="selectVectorMotif('kalash')" id="motifBtn-kalash" class="motif-btn p-2.5 rounded-xl border font-bold text-center transition bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700">🏺 Mangal Kalash</button>
+                        <button onclick="selectVectorMotif('cake')" id="motifBtn-cake" class="motif-btn p-2.5 rounded-xl border font-bold text-center transition bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700">🎂 Party Cake</button>
+                    </div>
+                </div>
+
+                <!-- Couple / Child / Host Photo Upload & Frame -->
+                <div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-xs font-extrabold uppercase tracking-wider text-rose-600 dark:text-rose-400">2. Couple / Birthday Photo Frame (Optional)</h3>
+                            <p class="text-[11px] text-slate-500">Upload photo to replace or accompany top motif</p>
+                        </div>
+                        <div class="flex gap-1.5">
+                            <label class="cursor-pointer px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition">
+                                <span>Upload Photo</span>
+                                <input type="file" accept="image/*" class="hidden" onchange="handlePhotoUpload(event)">
+                            </label>
+                            <button onclick="clearUploadedPhoto()" class="px-2.5 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-700 text-xs font-semibold hover:bg-rose-500 hover:text-white transition">Remove</button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 text-xs pt-1">
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">Photo Frame Shape</label>
+                            <select id="sel_photoFrame" onchange="syncDesignControls()" class="w-full px-2.5 py-1.5 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                                <option value="arch">Royal Mandap Arch</option>
+                                <option value="circle">Ornate Gold Circle</option>
+                                <option value="heart">Romantic Heart</option>
+                                <option value="hexagon">Royal Hexagon</option>
+                                <option value="shield">Crest Shield</option>
+                            </select>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[11px] mb-1"><span>Photo Zoom</span><span id="lbl_zoom">100%</span></div>
+                            <input type="range" id="rng_photoZoom" min="0.6" max="2.2" step="0.05" value="1" oninput="updatePhotoPanZoom()" class="w-full accent-rose-600">
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[11px] mb-1"><span>Pan Left/Right (X)</span></div>
+                            <input type="range" id="rng_photoX" min="-80" max="80" step="2" value="0" oninput="updatePhotoPanZoom()" class="w-full accent-rose-600">
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-[11px] mb-1"><span>Pan Up/Down (Y)</span></div>
+                            <input type="range" id="rng_photoY" min="-80" max="80" step="2" value="0" oninput="updatePhotoPanZoom()" class="w-full accent-rose-600">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: BORDERS, CARDSTOCK, TYPOGRAPHY & VENUE QR -->
+            <div id="tabPane-design" class="tab-pane hidden flex-1 overflow-y-auto p-3 sm:p-4 space-y-4">
+                <!-- Card Size, Border Architecture & Cardstock -->
+                <div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 space-y-3">
+                    <h3 class="text-xs font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400">1. Card Size, Ornate Border & Cardstock Texture</h3>
+                    <div class="grid grid-cols-2 gap-3 text-xs">
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">Card Aspect Ratio</label>
+                            <select id="sel_aspectRatio" onchange="syncDesignControls()" class="w-full px-2.5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                                <option value="portrait">5×7 Inch / A5 Portrait (Print & Mobile)</option>
+                                <option value="square">1:1 Square (WhatsApp / Instagram E-Card)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">Ornate Border Style (8)</label>
+                            <select id="sel_borderTheme" onchange="syncDesignControls()" class="w-full px-2.5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                                <option value="royal_mandap_arch">01. Royal Mandap Arch & Pillars</option>
+                                <option value="gold_filigree">02. Gold Filigree Double Frame</option>
+                                <option value="floral_garland">03. Festive Marigold & Lotus Corners</option>
+                                <option value="temple_toran">04. Traditional Temple Toran Frame</option>
+                                <option value="art_deco">05. Geometric Art Deco Gold</option>
+                                <option value="diya_festive">06. Glowing Festive Diya & Lights</option>
+                                <option value="lotus_mandala">07. Sacred Lotus Mandala Crest</option>
+                                <option value="minimal_luxury">08. Minimalist Gold Hairline</option>
+                            </select>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block text-[11px] font-semibold mb-1">Cardstock Paper Texture & Tone (6)</label>
+                            <select id="sel_cardstock" onchange="syncDesignControls()" class="w-full px-2.5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                                <option value="ivory_cream">01. Royal Ivory Cream Paper</option>
+                                <option value="silk_maroon">02. Imperial Bridal Maroon & Gold</option>
+                                <option value="emerald_velvet">03. Royal Emerald Velvet & Gold</option>
+                                <option value="midnight_navy">04. Midnight Navy & Foil Gold</option>
+                                <option value="pearl_white">05. Pure Pearl White Shimmer</option>
+                                <option value="pastel_blush">06. Pastel Blush Rose Silk</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Color Palette & Fonts -->
+                <div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400">2. Foil Colors & Calligraphy Fonts</h3>
+                        <button onclick="resetTemplateDesign()" class="text-[11px] text-rose-500 hover:underline font-semibold">Reset Template Default</button>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2.5">
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">Primary Ink</label>
+                            <div class="flex items-center gap-1">
+                                <input type="color" id="clr_primary" oninput="syncDesignControls()" value="#7f1d1d" class="w-8 h-8 rounded cursor-pointer border-0">
+                                <input type="text" id="hex_primary" oninput="syncColorHexInput('primary')" value="#7f1d1d" class="w-full px-1.5 py-1 text-xs font-mono rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">Secondary Ink</label>
+                            <div class="flex items-center gap-1">
+                                <input type="color" id="clr_secondary" oninput="syncDesignControls()" value="#b45309" class="w-8 h-8 rounded cursor-pointer border-0">
+                                <input type="text" id="hex_secondary" oninput="syncColorHexInput('secondary')" value="#b45309" class="w-full px-1.5 py-1 text-xs font-mono rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">Gold Foil Accent</label>
+                            <div class="flex items-center gap-1">
+                                <input type="color" id="clr_accent" oninput="syncDesignControls()" value="#d97706" class="w-8 h-8 rounded cursor-pointer border-0">
+                                <input type="text" id="hex_accent" oninput="syncColorHexInput('accent')" value="#d97706" class="w-full px-1.5 py-1 text-xs font-mono rounded bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 pt-1 text-xs">
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">Heading Font</label>
+                            <select id="sel_headingFont" onchange="syncDesignControls()" class="w-full px-2.5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                                <option value="Cinzel">Cinzel (Royal Roman)</option>
+                                <option value="Rozha One">Rozha One (Royal Hindi/Display)</option>
+                                <option value="Playfair Display">Playfair Display (Classic)</option>
+                                <option value="Noto Sans Devanagari">Noto Sans Devanagari (Hindi)</option>
+                                <option value="Noto Sans Gujarati">Noto Sans Gujarati (Gujarati)</option>
+                                <option value="Poppins">Poppins (Modern Clean)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold mb-1">Couple / Honoree Name Font</label>
+                            <select id="sel_namesFont" onchange="syncDesignControls()" class="w-full px-2.5 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                                <option value="Great Vibes">Great Vibes (Calligraphy Script)</option>
+                                <option value="Playfair Display">Playfair Italic</option>
+                                <option value="Cinzel">Cinzel Engraved</option>
+                                <option value="Rozha One">Rozha One Bold</option>
+                                <option value="Noto Sans Devanagari">Noto Sans Devanagari</option>
+                                <option value="Noto Sans Gujarati">Noto Sans Gujarati</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venue Google Maps / RSVP QR Code -->
+                <div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 rounded-xl p-3.5 space-y-2">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-xs font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400">3. Venue Google Maps & RSVP QR Code</h3>
+                            <p class="text-[11px] text-slate-500">Guests scan QR on card to open venue location</p>
+                        </div>
+                        <label class="flex items-center gap-1.5 text-xs font-bold cursor-pointer">
+                            <input type="checkbox" id="chk_showVenueQR" checked onchange="syncDesignControls()" class="accent-amber-500">
+                            <span>Show QR</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- RIGHT 7-COLUMN LIVE 300-DPI CARD STAGE -->
+        <section class="lg:col-span-7 studio-checker-bg flex flex-col justify-between p-3 sm:p-6 overflow-y-auto relative">
+
+            <!-- Top Stage Floating Bar -->
+            <div class="flex flex-wrap items-center justify-between gap-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur border border-slate-200 dark:border-slate-800 rounded-xl px-3.5 py-2 shadow-sm">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span class="text-xs font-extrabold">Live 300-DPI Invitation Studio Stage</span>
+                    <span id="stageSizeLabel" class="text-[11px] text-slate-400 font-mono">(5×7 Inch Portrait • 1500 × 2100 px)</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <button onclick="flipCardAspect()" class="px-2.5 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-rose-600 hover:text-white text-xs font-bold border border-slate-200 dark:border-slate-700 transition">
+                        🔄 Switch 5×7 / WhatsApp 1:1
+                    </button>
+
+                    <div class="flex items-center gap-1">
+                        <button onclick="stepInviteTemplate(-1)" title="Previous Template" class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-xs font-bold transition">◀</button>
+                        <button onclick="stepInviteTemplate(1)" title="Next Template" class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-xs font-bold transition">▶</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CENTER CARD PREVIEW CANVAS -->
+            <div class="my-auto py-5 flex items-center justify-center">
+                <div class="p-2.5 rounded-2xl bg-white/40 dark:bg-slate-800/40 backdrop-blur-sm border border-slate-300/60 dark:border-slate-700/60">
+                    <canvas id="inviteMainCanvas" width="1500" height="2100" class="card-stage-shadow rounded-xl max-w-full h-auto block" style="width: 430px; height: 602px;"></canvas>
+                </div>
+            </div>
+
+            <!-- Bottom Quick Bar -->
+            <div class="bg-white/90 dark:bg-slate-900/90 backdrop-blur border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2 flex flex-wrap items-center justify-between gap-2 text-xs">
+                <span class="text-slate-500 dark:text-slate-400">
+                    💡 <strong>Shop & Sharing Tip:</strong> Use <strong>WhatsApp 1:1</strong> for digital invites or <strong>Print / Save PDF</strong> to print 2 cards per A4 sheet with crop marks!
+                </span>
+                <button onclick="openPrintModal()" class="text-amber-600 dark:text-amber-400 font-extrabold hover:underline">
+                    🖨️ Open 2-Up A4 Print & PDF Sheet →
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- INTERACTIVE PRINT & PDF PREVIEW MODAL -->
+    <div id="printModal" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex flex-col">
+        <div class="bg-slate-900 border-b border-slate-800 px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3 text-white">
+            <div class="flex items-center gap-3">
+                <span class="px-2.5 py-1 rounded-lg bg-amber-500 text-slate-950 font-black text-xs uppercase">Print & PDF Studio</span>
+                <div>
+                    <h2 class="text-sm font-extrabold">300-DPI Print Sheet & PDF Preview (Zero Blank-Page Guarantee)</h2>
+                    <p id="modalPrintInfo" class="text-[11px] text-slate-400">A4 2-Up Print Sheet with Cut Marks</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2">
+                <select id="sel_printLayout" onchange="renderModalSheetPreview()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-xs text-white font-semibold">
+                    <option value="a4_2up">A4 Sheet — 2 Cards Side-by-Side (With Crop Marks)</option>
+                    <option value="single_full">Single Full-Page Invitation Card</option>
+                </select>
+
+                <button onclick="triggerDirectPrint()" class="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-extrabold shadow-lg flex items-center gap-1.5 transition active:scale-95">
+                    <span>🖨️ Print / Save as PDF (Direct)</span>
+                </button>
+
+                <button onclick="openNewTabPrintWindow()" class="px-3.5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-extrabold shadow-lg flex items-center gap-1.5 transition active:scale-95">
+                    <span>🪟 Open Printable PDF in New Tab</span>
+                </button>
+
+                <button onclick="downloadA4SheetPNG()" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold shadow-lg flex items-center gap-1.5 transition active:scale-95">
+                    <span>⬇️ Download 300-DPI A4 Sheet PNG</span>
+                </button>
+
+                <button onclick="closePrintModal()" class="p-2 rounded-xl bg-slate-800 hover:bg-rose-600 text-slate-300 hover:text-white transition" title="Close">
+                    ✕
+                </button>
+            </div>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-4 sm:p-8 flex flex-col items-center gap-5">
+            <div class="max-w-4xl w-full bg-amber-950/50 border border-amber-500/30 rounded-xl px-4 py-2.5 text-xs text-amber-200">
+                ✅ <strong>Print Ready:</strong> Rendered at crisp 300 DPI. If your browser blocks direct print inside a frame, use <strong>"Open Printable PDF in New Tab"</strong> or <strong>"Download 300-DPI A4 Sheet PNG"</strong>.
+            </div>
+            <div id="modalSheetMount" class="w-full max-w-4xl bg-white text-slate-900 rounded-xl shadow-2xl p-6 flex items-center justify-center"></div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toastPopup" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white border border-amber-500/40 px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2.5 text-xs font-bold">
+        <span id="toastEmoji">✅</span>
+        <span id="toastMsg">Ready</span>
+    </div>
+
+    <!-- DEDICATED PRINT MOUNT AREA -->
+    <div id="printMountArea"></div>
+
+    <script>
+        /********************************************************************
+         * 1. 150+ PROGRAMMATIC INVITATION & GREETING TEMPLATES CATALOG
+         ********************************************************************/
+        const INVITE_CATEGORIES = [
+            { id: 'all', name: 'All 150+ Cards', icon: '✨', count: 150 },
+            { id: 'wedding', name: 'Wedding (Shubh Vivah)', icon: '💍', count: 30 },
+            { id: 'engagement', name: 'Engagement & Ring', icon: '💎', count: 20 },
+            { id: 'birthday', name: 'Birthday & Kids', icon: '🎂', count: 25 },
+            { id: 'griha', name: 'Griha Pravesh', icon: '🏡', count: 15 },
+            { id: 'mundan', name: 'Mundan & Naming', icon: '👶', count: 15 },
+            { id: 'anniversary', name: 'Anniversary', icon: '🥂', count: 15 },
+            { id: 'festival', name: 'Festival Wishes', icon: '🪔', count: 15 },
+            { id: 'formal', name: 'Party & Inauguration', icon: '🎊', count: 15 }
+        ];
+
+        const BORDER_THEMES = [
+            'royal_mandap_arch', 'gold_filigree', 'floral_garland', 'temple_toran',
+            'art_deco', 'diya_festive', 'lotus_mandala', 'minimal_luxury'
+        ];
+
+        const CARDSTOCK_MODES = [
+            'ivory_cream', 'silk_maroon', 'emerald_velvet',
+            'midnight_navy', 'pearl_white', 'pastel_blush'
+        ];
+
+        const MOTIF_TYPES = ['ganesha', 'om', 'swastik', 'rings', 'kalash', 'cake'];
+        const HEADING_FONTS = ['Cinzel', 'Playfair Display', 'Rozha One', 'Poppins'];
+        const NAMES_FONTS = ['Great Vibes', 'Playfair Display', 'Cinzel', 'Rozha One'];
+
+        const CATEGORY_PALETTES = {
+            wedding: [
+                ['#7f1d1d', '#b45309', '#d97706'], ['#fef3c7', '#fde047', '#f59e0b'], ['#4c0519', '#9f1239', '#eab308'],
+                ['#064e3b', '#047857', '#f59e0b'], ['#1e1b4b', '#312e81', '#eab308'], ['#7c2d12', '#c2410c', '#d97706']
+            ],
+            engagement: [
+                ['#831843', '#be185d', '#d97706'], ['#1e1b4b', '#4338ca', '#f59e0b'], ['#0f172a', '#334155', '#eab308'],
+                ['#701a75', '#a21caf', '#f59e0b'], ['#881337', '#e11d48', '#fbbf24']
+            ],
+            birthday: [
+                ['#1d4ed8', '#7c3aed', '#f59e0b'], ['#be185d', '#db2777', '#facc15'], ['#047857', '#0ea5e9', '#f59e0b'],
+                ['#6d28d9', '#ec4899', '#fbbf24'], ['#c2410c', '#ea580c', '#fde047']
+            ],
+            griha: [
+                ['#7c2d12', '#ea580c', '#d97706'], ['#14532d', '#15803d', '#eab308'], ['#78350f', '#b45309', '#f59e0b'],
+                ['#7f1d1d', '#dc2626', '#eab308']
+            ],
+            mundan: [
+                ['#0369a1', '#0284c7', '#f59e0b'], ['#9d174d', '#db2777', '#eab308'], ['#b45309', '#d97706', '#15803d'],
+                ['#4338ca', '#6366f1', '#f59e0b']
+            ],
+            anniversary: [
+                ['#4c0519', '#be123c', '#eab308'], ['#090d16', '#1e293b', '#facc15'], ['#1e3a8a', '#2563eb', '#f59e0b'],
+                ['#581c87', '#7e22ce', '#eab308']
+            ],
+            festival: [
+                ['#7c2d12', '#ea580c', '#facc15'], ['#450a0a', '#dc2626', '#fbbf24'], ['#064e3b', '#059669', '#fde047'],
+                ['#31102f', '#c026d3', '#facc15']
+            ],
+            formal: [
+                ['#0f172a', '#1e40af', '#d97706'], ['#18181b', '#3f3f46', '#eab308'], ['#0c4a6e', '#0284c7', '#f59e0b'],
+                ['#1e1b4b', '#4f46e5', '#eab308']
+            ]
+        };
+
+        const DESIGN_ADJECTIVES = [
+            'Royal Arch', 'Imperial Gold', 'Marigold Bliss', 'Mandap Crest', 'Saffron Silk',
+            'Lotus Heritage', 'Pearl Filigree', 'Velvet Crown', 'Utsav Gold', 'Mangal Toran',
+            'Aurelia Rose', 'Grand Darbar', 'Kesar Glow', 'Shahi Mehfil', 'Divine Blessing',
+            'Emerald Royal', 'Ruby Splendor', 'Starlight Gala', 'Festive Diya', 'Golden Knot',
+            'Regal Palace', 'Lotus Mandala', 'Velvet Night', 'Blossom Charm', 'Sacred Vows',
+            'Crown Jewel', 'Heritage Scroll', 'Sovereign Gold', 'Celebration', 'Opulent Crest'
+        ];
+
+        const ALL_INVITE_TEMPLATES = [];
+
+        function build150InviteTemplates() {
+            const specs = [
+                { cat: 'wedding', prefix: 'Vivah', count: 30, motif: 'ganesha' },
+                { cat: 'engagement', prefix: 'Sagai', count: 20, motif: 'rings' },
+                { cat: 'birthday', prefix: 'Bday', count: 25, motif: 'cake' },
+                { cat: 'griha', prefix: 'Griha', count: 15, motif: 'kalash' },
+                { cat: 'mundan', prefix: 'Sanskar', count: 15, motif: 'swastik' },
+                { cat: 'anniversary', prefix: 'Jubilee', count: 15, motif: 'rings' },
+                { cat: 'festival', prefix: 'Utsav', count: 15, motif: 'om' },
+                { cat: 'formal', prefix: 'Gala', count: 15, motif: 'kalash' }
+            ];
+
+            let id = 1;
+            specs.forEach(sp => {
+                const pals = CATEGORY_PALETTES[sp.cat];
+                for (let i = 0; i < sp.count; i++) {
+                    const aspectRatio = (i % 3 === 2) ? 'square' : 'portrait';
+                    const borderTheme = BORDER_THEMES[(id + i) % BORDER_THEMES.length];
+                    let cardstock = CARDSTOCK_MODES[(id + i) % CARDSTOCK_MODES.length];
+                    const isDarkCard = ['silk_maroon', 'emerald_velvet', 'midnight_navy'].includes(cardstock);
+
+                    // Select crisp high-contrast inks matching light vs dark cardstock
+                    const basePal = pals[i % pals.length];
+                    const primary = isDarkCard ? '#fef3c7' : basePal[0];
+                    const secondary = isDarkCard ? '#fde047' : basePal[1];
+                    const accent = isDarkCard ? '#facc15' : basePal[2];
+
+                    const adj = DESIGN_ADJECTIVES[(id + i) % DESIGN_ADJECTIVES.length];
+                    const code = String(id).padStart(3, '0');
+
+                    ALL_INVITE_TEMPLATES.push({
+                        id,
+                        code: `#${code}`,
+                        name: `${sp.prefix} ${adj} ${code}`,
+                        category: sp.cat,
+                        aspectRatio,
+                        borderTheme,
+                        cardstock,
+                        motif: sp.motif,
+                        primary,
+                        secondary,
+                        accent,
+                        headingFont: HEADING_FONTS[(id + i) % HEADING_FONTS.length],
+                        namesFont: NAMES_FONTS[(id + i) % NAMES_FONTS.length]
+                    });
+                    id++;
+                }
+            });
+        }
+
+        /********************************************************************
+         * 2. APPLICATION STATE
+         ********************************************************************/
+        const inviteState = {
+            activeTplId: 1,
+            catFilter: 'all',
+            ratioFilter: 'all',
+
+            aspectRatio: 'portrait',
+            borderTheme: 'royal_mandap_arch',
+            cardstock: 'ivory_cream',
+            motif: 'ganesha',
+            showMotif: true,
+            photoFrame: 'arch',
+            primaryColor: '#7f1d1d',
+            secondaryColor: '#b45309',
+            accentColor: '#d97706',
+            headingFont: 'Cinzel',
+            namesFont: 'Great Vibes',
+            showVenueQR: true,
+
+            photoImage: null,
+            photoZoom: 1,
+            photoPanX: 0,
+            photoPanY: 0,
+
+            data: {
+                mantra: '|| श्री गणेशाय नमः ||',
+                eventTitle: 'SHUBH VIVAH INVITATION',
+                hostLine: 'Smt. Sunita Devi & Shri Rajeshwar Prasad Sharma cordially invite you to grace the auspicious wedding ceremony of their beloved son',
+                personOne: 'Chiranjeevi Aarav',
+                connector: 'weds',
+                personTwo: 'Ayushmati Ananya',
+                familySub: '(D/o Smt. Kavita & Shri Mahendra Verma, New Delhi)',
+                eventDate: 'Sunday, 14th December 2026',
+                eventTime: 'Baraat: 7:00 PM • Dinner: 8:30 PM',
+                subEvents: 'Haldi & Mehendi: 12 Dec • Sangeet Sandhya: 13 Dec (7:30 PM)',
+                venueAddress: 'The Imperial Grand Palace & Lawns, NH-48, Gurugram, Haryana',
+                rsvpText: 'RSVP: Sharma Family • +91 98765 43210',
+                qrLink: 'https://maps.google.com/?q=The+Imperial+Grand+Palace+Gurugram'
+            }
+        };
+
+        /********************************************************************
+         * 3. OFFLINE DETERMINISTIC QR MATRIX GENERATOR
+         ********************************************************************/
+        function hashStr(str) {
+            let h = 2166136261 >>> 0;
+            for (let i = 0; i < str.length; i++) {
+                h ^= str.charCodeAt(i);
+                h = Math.imul(h, 16777619);
+            }
+            return h >>> 0;
+        }
+
+        function drawVenueQRCode(ctx, text, x, y, size, fg = '#0f172a', bg = '#ffffff') {
+            const modules = 21;
+            const cell = size / (modules + 2);
+            ctx.save();
+            ctx.fillStyle = bg;
+            drawRoundRect(ctx, x, y, size, size, 10);
+            ctx.fill();
+            ctx.strokeStyle = 'rgba(217,119,6,0.45)';
+            ctx.lineWidth = 2.5;
+            ctx.stroke();
+
+            ctx.fillStyle = fg;
+            const ox = x + cell;
+            const oy = y + cell;
+
+            const isFinder = (r, c) => (r < 7 && c < 7) || (r < 7 && c >= modules - 7) || (r >= modules - 7 && c < 7);
+            const drawFinder = (sr, sc) => {
+                for (let r = 0; r < 7; r++) {
+                    for (let c = 0; c < 7; c++) {
+                        if (r === 0 || r === 6 || c === 0 || c === 6 || (r >= 2 && r <= 4 && c >= 2 && c <= 4)) {
+                            ctx.fillRect(ox + (sc + c) * cell, oy + (sr + r) * cell, Math.ceil(cell), Math.ceil(cell));
+                        }
+                    }
+                }
+            };
+
+            drawFinder(0, 0);
+            drawFinder(0, modules - 7);
+            drawFinder(modules - 7, 0);
+
+            const seed = hashStr(text || 'VENUE-MAP');
+            for (let r = 0; r < modules; r++) {
+                for (let c = 0; c < modules; c++) {
+                    if (isFinder(r, c)) continue;
+                    if ((r === 7 && c <= 7) || (c === 7 && r <= 7)) continue;
+                    if ((r === 7 && c >= modules - 8) || (c === modules - 8 && r <= 7)) continue;
+                    if ((r === modules - 8 && c <= 7) || (c === 7 && r >= modules - 8)) continue;
+                    if (r === 6 || c === 6) {
+                        if ((r + c) % 2 === 0) ctx.fillRect(ox + c * cell, oy + r * cell, Math.ceil(cell), Math.ceil(cell));
+                        continue;
+                    }
+                    const ch = text.charCodeAt((r * modules + c) % Math.max(1, text.length)) || 65;
+                    if (((seed ^ (r * 31 + c * 17 + ch * 13)) & 3) !== 0) {
+                        ctx.fillRect(ox + c * cell, oy + r * cell, Math.ceil(cell), Math.ceil(cell));
+                    }
+                }
+            }
+            ctx.restore();
+        }
+
+        /********************************************************************
+         * 4. 300-DPI HIGH-RESOLUTION INVITATION CANVAS RENDERER
+         ********************************************************************/
+        function drawRoundRect(ctx, x, y, w, h, r) {
+            const rad = Math.min(r, w / 2, h / 2);
+            ctx.beginPath();
+            ctx.moveTo(x + rad, y);
+            ctx.arcTo(x + w, y, x + w, y + h, rad);
+            ctx.arcTo(x + w, y + h, x, y + h, rad);
+            ctx.arcTo(x, y + h, x, y, rad);
+            ctx.arcTo(x, y, x + w, y, rad);
+            ctx.closePath();
+        }
+
+        function getCardstockTheme(mode) {
+            switch (mode) {
+                case 'silk_maroon':
+                    return { bg1: '#6b0f1a', bg2: '#3b0710', bodyText: '#fffbeb', subText: '#fde68a', boxBg: 'rgba(255,255,255,0.08)', isDark: true };
+                case 'emerald_velvet':
+                    return { bg1: '#064e3b', bg2: '#022c22', bodyText: '#ecfdf5', subText: '#a7f3d0', boxBg: 'rgba(255,255,255,0.08)', isDark: true };
+                case 'midnight_navy':
+                    return { bg1: '#0f172a', bg2: '#090d16', bodyText: '#f8fafc', subText: '#cbd5e1', boxBg: 'rgba(255,255,255,0.07)', isDark: true };
+                case 'pearl_white':
+                    return { bg1: '#ffffff', bg2: '#f1f5f9', bodyText: '#1e293b', subText: '#475569', boxBg: 'rgba(241,245,249,0.85)', isDark: false };
+                case 'pastel_blush':
+                    return { bg1: '#fff1f2', bg2: '#ffe4e6', bodyText: '#4c0519', subText: '#881337', boxBg: 'rgba(255,255,255,0.75)', isDark: false };
+                case 'ivory_cream':
+                default:
+                    return { bg1: '#fffdf5', bg2: '#fef3c7', bodyText: '#292524', subText: '#57534e', boxBg: 'rgba(255,255,255,0.75)', isDark: false };
+            }
+        }
+
+        // Draw 8 Ornate Decorative Border Architectures
+        function drawOrnateInvitationBorder(ctx, W, H, theme, primary, secondary, accent) {
+            ctx.save();
+            const m = 54;
+
+            // Subtle Mandala Watermark behind center
+            ctx.save();
+            ctx.translate(W / 2, H * 0.52);
+            ctx.strokeStyle = accent;
+            ctx.globalAlpha = 0.08;
+            ctx.lineWidth = 3;
+            for (let r = 120; r <= 420; r += 60) {
+                ctx.beginPath();
+                ctx.arc(0, 0, r, 0, Math.PI * 2);
+                ctx.stroke();
+            }
+            for (let a = 0; a < Math.PI * 2; a += Math.PI / 12) {
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.lineTo(Math.cos(a) * 420, Math.sin(a) * 420);
+                ctx.stroke();
+            }
+            ctx.restore();
+
+            if (theme === 'royal_mandap_arch') {
+                // Double outer gold border + Scalloped Mughal Mandap Arch Dome
+                ctx.strokeStyle = accent;
+                ctx.lineWidth = 10;
+                ctx.strokeRect(m, m, W - m * 2, H - m * 2);
+
+                ctx.strokeStyle = secondary;
+                ctx.lineWidth = 3;
+                ctx.strokeRect(m + 18, m + 18, W - (m + 18) * 2, H - (m + 18) * 2);
+
+                // Royal Arch Dome inside top
+                const archTop = m + 38;
+                const archShoulder = m + 250;
+                ctx.strokeStyle = accent;
+                ctx.lineWidth = 7;
+                ctx.beginPath();
+                ctx.moveTo(m + 42, H - m - 42);
+                ctx.lineTo(m + 42, archShoulder);
+                ctx.quadraticCurveTo(m + 42, archTop + 70, W / 2, archTop);
+                ctx.quadraticCurveTo(W - m - 42, archTop + 70, W - m - 42, archShoulder);
+                ctx.lineTo(W - m - 42, H - m - 42);
+                ctx.closePath();
+                ctx.stroke();
+
+            } else if (theme === 'gold_filigree') {
+                ctx.strokeStyle = accent;
+                ctx.lineWidth = 12;
+                ctx.strokeRect(m, m, W - m * 2, H - m * 2);
+                ctx.lineWidth = 3;
+                ctx.strokeRect(m + 22, m + 22, W - (m + 22) * 2, H - (m + 22) * 2);
+
+                // Corner Lotus Rosettes
+                [[m + 22, m + 22], [W - m - 22, m + 22], [m + 22, H - m - 22], [W - m - 22, H - m - 22]].forEach(([cx, cy]) => {
+                    ctx.fillStyle = accent;
+                    ctx.beginPath(); ctx.arc(cx, cy, 26, 0, Math.PI * 2); ctx.fill();
+                    ctx.fillStyle = primary;
+                    ctx.beginPath(); ctx.arc(cx, cy, 12, 0, Math.PI * 2); ctx.fill();
+                });
+
+            } else if (theme === 'floral_garland') {
+                ctx.strokeStyle = accent;
+                ctx.lineWidth = 8;
+                ctx.strokeRect(m, m, W - m * 2, H - m * 2);
+
+                // Marigold & Leaf Clusters in all 4 Corners
+                const corners = [[m + 16, m + 16, 1, 1], [W - m - 16, m + 16, -1, 1], [m + 16, H - m - 16, 1, -1], [W - m - 16, H - m - 16, -1, -1]];
+                corners.forEach(([cx, cy, dx, dy]) => {
+                    for (let i = 0; i < 5; i++) {
+                        ctx.fillStyle = i % 2 === 0 ? '#f59e0b' : '#ea580c';
+                        ctx.beginPath();
+                        ctx.arc(cx + dx * i * 34, cy + dy * 12, 20 - i * 2, 0, Math.PI * 2);
+                        ctx.fill();
+                        ctx.beginPath();
+                        ctx.arc(cx + dx * 12, cy + dy * i * 34, 20 - i * 2, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                });
+
+            } else if (theme === 'temple_toran') {
+                ctx.strokeStyle = accent;
+                ctx.lineWidth = 10;
+                ctx.strokeRect(m, m, W - m * 2, H - m * 2);
+
+                // Hanging Festive Toran Scallops along top border
+                const step = 75;
+                for (let x = m + 15; x <= W - m - 75; x += step) {
+                    ctx.fillStyle = accent;
+                    ctx.beginPath();
+                    ctx.arc(x + step / 2, m + 8, step * 0.44, 0, Math.PI, false);
+                    ctx.fill();
+                    ctx.fillStyle = secondary;
+                    ctx.beginPath();
+                    ctx.arc(x + step / 2, m + 42, 7, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+            } else if (theme === 'art_deco') {
+                ctx.strokeStyle = accent;
+                ctx.lineWidth = 8;
+                ctx.strokeRect(m, m, W - m * 2, H - m * 2);
+                ctx.strokeRect(m + 24, m + 24, W - (m + 24) * 2, H - (m + 24) * 2);
+
+                // Diagonal corner chevrons
+                const c = 110;
+                ctx.lineWidth = 6;
+                [[m, m, 1, 1], [W - m, m, -1, 1], [m, H - m, 1, -1], [W - m, H - m, -1, -1]].forEach(([x, y, dx, dy]) => {
+                    ctx.beginPath();
+                    ctx.moveTo(x + dx * c, y);
+                    ctx.lineTo(x, y + dy * c);
+                    ctx.stroke();
+                });
+
+            } else if (theme === 'diya_festive') {
+                ctx.strokeStyle = accent;
+                ctx.lineWidth = 9;
+                ctx.strokeRect(m, m, W - m * 2, H - m * 2);
+
+                // Glowing String Lights along Top
+                ctx.strokeStyle = secondary;
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.moveTo(m, m + 55);
+                ctx.quadraticCurveTo(W / 2, m + 125, W - m, m + 55);
+                ctx.stroke();
+
+                for (let t = 0.1; t <= 0.92; t += 0.1) {
+                    const bx = (1 - t) * (1 - t) * m + 2 * (1 - t) * t * (W / 2) + t * t * (W - m);
+                    const by = (1 - t) * (1 - t) * (m + 55) + 2 * (1 - t) * t * (m + 125) + t * t * (m + 55);
+                    ctx.fillStyle = '#fde047';
+                    ctx.beginPath(); ctx.arc(bx, by + 12, 11, 0, Math.PI * 2); ctx.fill();
+                }
+
+            } else if (theme === 'lotus_mandala') {
+                ctx.strokeStyle = accent;
+                ctx.lineWidth = 10;
+                ctx.strokeRect(m, m, W - m * 2, H - m * 2);
+                ctx.lineWidth = 3;
+                ctx.strokeRect(m + 20, m + 20, W - (m + 20) * 2, H - (m + 20) * 2);
+
+                // Top & Bottom Lotus Petal Crowns
+                [m + 20, H - m - 20].forEach((cy, idx) => {
+                    const dir = idx === 0 ? 1 : -1;
+                    ctx.fillStyle = accent;
+                    for (let p = -3; p <= 3; p++) {
+                        ctx.beginPath();
+                        ctx.ellipse(W / 2 + p * 26, cy + dir * 18, 12, 26, p * 0.2, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                });
+
+            } else {
+                // minimal_luxury
+                ctx.strokeStyle = accent;
+                ctx.lineWidth = 7;
+                ctx.strokeRect(m, m, W - m * 2, H - m * 2);
+                ctx.lineWidth = 2;
+                ctx.strokeRect(m + 16, m + 16, W - (m + 16) * 2, H - (m + 16) * 2);
+            }
+            ctx.restore();
+        }
+
+        // Draw Sacred & Celebratory Vector Motifs on Canvas
+        function drawVectorMotifEmblem(ctx, cx, cy, r, type, primary, accent) {
+            ctx.save();
+            // Ornamental Sunburst Medallion Backdrop
+            ctx.fillStyle = accent;
+            ctx.beginPath();
+            for (let i = 0; i < 32; i++) {
+                const rad = i % 2 === 0 ? r : r * 0.88;
+                const a = (i * Math.PI) / 16;
+                const px = cx + rad * Math.cos(a);
+                const py = cy + rad * Math.sin(a);
+                if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+            }
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(cx, cy, r * 0.78, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = primary;
+            ctx.lineWidth = 4;
+            ctx.stroke();
+
+            ctx.fillStyle = primary;
+            ctx.strokeStyle = primary;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+
+            if (type === 'ganesha') {
+                // Stylized Sacred Ganesha Emblem + Tilak
+                ctx.font = `900 ${Math.round(r * 0.92)}px "Noto Sans Devanagari", serif`;
+                ctx.fillText('ॐ', cx, cy + 4);
+                // Crown dots above
+                ctx.fillStyle = accent;
+                ctx.beginPath(); ctx.arc(cx, cy - r * 0.52, 6, 0, Math.PI * 2); ctx.fill();
+            } else if (type === 'om') {
+                ctx.font = `900 ${Math.round(r * 0.95)}px "Noto Sans Devanagari", serif`;
+                ctx.fillText('ॐ', cx, cy + 4);
+            } else if (type === 'swastik') {
+                // Clean geometric Swastik with 4 sacred bindus
+                const arm = r * 0.36;
+                ctx.lineWidth = Math.max(5, r * 0.11);
+                ctx.lineCap = 'round';
+                ctx.beginPath();
+                ctx.moveTo(cx - arm, cy); ctx.lineTo(cx + arm, cy);
+                ctx.moveTo(cx, cy - arm); ctx.lineTo(cx, cy + arm);
+                ctx.moveTo(cx, cy - arm); ctx.lineTo(cx + arm, cy - arm);
+                ctx.moveTo(cx + arm, cy); ctx.lineTo(cx + arm, cy + arm);
+                ctx.moveTo(cx, cy + arm); ctx.lineTo(cx - arm, cy + arm);
+                ctx.moveTo(cx - arm, cy); ctx.lineTo(cx - arm, cy - arm);
+                ctx.stroke();
+
+                const d = arm * 0.48;
+                [[cx - d, cy - d], [cx + d, cy - d], [cx - d, cy + d], [cx + d, cy + d]].forEach(([bx, by]) => {
+                    ctx.beginPath(); ctx.arc(bx, by, 4.5, 0, Math.PI * 2); ctx.fill();
+                });
+            } else if (type === 'rings') {
+                // Interlocking Wedding Rings
+                ctx.lineWidth = 6;
+                ctx.strokeStyle = accent;
+                ctx.beginPath(); ctx.arc(cx - 16, cy + 4, 24, 0, Math.PI * 2); ctx.stroke();
+                ctx.strokeStyle = primary;
+                ctx.beginPath(); ctx.arc(cx + 16, cy + 4, 24, 0, Math.PI * 2); ctx.stroke();
+                // Diamond on top
+                ctx.fillStyle = '#38bdf8';
+                ctx.beginPath();
+                ctx.moveTo(cx + 16, cy - 32); ctx.lineTo(cx + 26, cy - 22); ctx.lineTo(cx + 16, cy - 14); ctx.lineTo(cx + 6, cy - 22);
+                ctx.closePath(); ctx.fill();
+            } else if (type === 'kalash') {
+                // Auspicious Mangal Kalash with Coconut & Mango Leaves
+                ctx.fillStyle = '#15803d';
+                [[-22, -18, -0.4], [0, -24, 0], [22, -18, 0.4]].forEach(([ox, oy, rot]) => {
+                    ctx.beginPath();
+                    ctx.ellipse(cx + ox, cy + oy, 9, 20, rot, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+                ctx.fillStyle = '#92400e';
+                ctx.beginPath(); ctx.arc(cx, cy - 10, 15, 0, Math.PI * 2); ctx.fill();
+                ctx.fillStyle = accent;
+                ctx.beginPath(); ctx.arc(cx, cy + 16, 26, 0, Math.PI * 2); ctx.fill();
+                ctx.fillStyle = primary;
+                ctx.fillRect(cx - 18, cy - 8, 36, 7);
+            } else {
+                // Birthday Celebration Cake with Candle
+                ctx.fillStyle = primary;
+                drawRoundRect(ctx, cx - 28, cy + 4, 56, 24, 5);
+                ctx.fill();
+                ctx.fillStyle = accent;
+                drawRoundRect(ctx, cx - 22, cy - 14, 44, 18, 4);
+                ctx.fill();
+                ctx.fillStyle = '#ef4444';
+                ctx.fillRect(cx - 3, cy - 28, 6, 14);
+                ctx.fillStyle = '#facc15';
+                ctx.beginPath(); ctx.arc(cx, cy - 33, 5, 0, Math.PI * 2); ctx.fill();
+            }
+            ctx.restore();
+        }
+
+        // Photo Frame Clipping Helper
+        function clipInvitePhotoShape(ctx, cx, cy, r, shape) {
+            ctx.beginPath();
+            if (shape === 'circle') {
+                ctx.arc(cx, cy, r, 0, Math.PI * 2);
+            } else if (shape === 'arch') {
+                ctx.moveTo(cx - r * 0.9, cy + r);
+                ctx.lineTo(cx - r * 0.9, cy - r * 0.15);
+                ctx.arc(cx, cy - r * 0.15, r * 0.9, Math.PI, 0, false);
+                ctx.lineTo(cx + r * 0.9, cy + r);
+            } else if (shape === 'heart') {
+                const s = r * 1.05;
+                ctx.moveTo(cx, cy + s * 0.85);
+                ctx.bezierCurveTo(cx - s * 1.3, cy + s * 0.1, cx - s * 0.7, cy - s * 0.95, cx, cy - s * 0.35);
+                ctx.bezierCurveTo(cx + s * 0.7, cy - s * 0.95, cx + s * 1.3, cy + s * 0.1, cx, cy + s * 0.85);
+            } else if (shape === 'hexagon') {
+                for (let i = 0; i < 6; i++) {
+                    const a = (Math.PI / 3) * i - Math.PI / 2;
+                    const px = cx + r * 1.05 * Math.cos(a);
+                    const py = cy + r * 1.05 * Math.sin(a);
+                    if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
+                }
+            } else {
+                // shield
+                ctx.moveTo(cx - r * 0.92, cy - r * 0.95);
+                ctx.lineTo(cx + r * 0.92, cy - r * 0.95);
+                ctx.lineTo(cx + r * 0.92, cy + r * 0.1);
+                ctx.quadraticCurveTo(cx + r * 0.92, cy + r * 0.85, cx, cy + r * 1.08);
+                ctx.quadraticCurveTo(cx - r * 0.92, cy + r * 0.85, cx - r * 0.92, cy + r * 0.1);
+            }
+            ctx.closePath();
+        }
+
+        function drawFittedLine(ctx, text, x, y, maxW, baseSize, weight = '700', family = 'Cinzel') {
+            let sz = baseSize;
+            ctx.font = `${weight} ${sz}px "${family}", "Noto Sans Devanagari", "Noto Sans Gujarati", sans-serif`;
+            while (sz > 18 && ctx.measureText(text).width > maxW) {
+                sz -= 2;
+                ctx.font = `${weight} ${sz}px "${family}", "Noto Sans Devanagari", "Noto Sans Gujarati", sans-serif`;
+            }
+            ctx.fillText(text, x, y);
+        }
+
+        function drawWrappedBlock(ctx, text, cx, startY, maxW, lineH, maxLines = 3) {
+            const words = (text || '').split(/\s+/);
+            let line = '';
+            let y = startY;
+            let count = 0;
+            for (let i = 0; i < words.length; i++) {
+                const test = line + words[i] + ' ';
+                if (ctx.measureText(test).width > maxW && i > 0) {
+                    ctx.fillText(line.trim(), cx, y);
+                    line = words[i] + ' ';
+                    y += lineH;
+                    count++;
+                    if (count >= maxLines - 1) break;
+                } else {
+                    line = test;
+                }
+            }
+            ctx.fillText(line.trim(), cx, y);
+            return y;
+        }
+
+        // MASTER INVITATION CANVAS RENDERER (1500x2100 Portrait OR 1600x1600 Square)
+        function renderInvitationCanvas(targetCanvas = null) {
+            const canvas = targetCanvas || document.getElementById('inviteMainCanvas');
+            if (!canvas) return;
+
+            const isSq = inviteState.aspectRatio === 'square';
+            const W = isSq ? 1600 : 1500;
+            const H = isSq ? 1600 : 2100;
+
+            canvas.width = W;
+            canvas.height = H;
+
+            if (!targetCanvas) {
+                canvas.style.width = isSq ? '480px' : '430px';
+                canvas.style.height = isSq ? '480px' : '602px';
+                document.getElementById('stageSizeLabel').textContent = isSq
+                    ? '(WhatsApp / Social 1:1 Square • 1600 × 1600 px)'
+                    : '(5×7 Inch / A5 Portrait • 1500 × 2100 px • 300 DPI)';
+            }
+
+            const ctx = canvas.getContext('2d');
+            const d = inviteState.data;
+            const stock = getCardstockTheme(inviteState.cardstock);
+            const primary = inviteState.primaryColor;
+            const secondary = inviteState.secondaryColor;
+            const accent = inviteState.accentColor;
+
+            // 1. Cardstock Radial Paper Gradient
+            const bg = ctx.createRadialGradient(W / 2, H / 2, 80, W / 2, H / 2, Math.max(W, H) * 0.75);
+            bg.addColorStop(0, stock.bg1);
+            bg.addColorStop(1, stock.bg2);
+            ctx.fillStyle = bg;
+            ctx.fillRect(0, 0, W, H);
+
+            // 2. Ornate Border Architecture
+            drawOrnateInvitationBorder(ctx, W, H, inviteState.borderTheme, primary, secondary, accent);
+
+            const cx = W / 2;
+            const safeW = W - 260;
+
+            // Adaptive vertical spacing for Portrait (2100) vs Square (1600)
+            let curY = isSq ? 145 : 185;
+
+            // 3. Top Sacred Mantra
+            if (d.mantra) {
+                ctx.textAlign = 'center';
+                ctx.fillStyle = accent;
+                drawFittedLine(ctx, d.mantra, cx, curY, safeW, isSq ? 32 : 36, '800', 'Noto Sans Devanagari');
+                curY += isSq ? 82 : 105;
+            }
+
+            // 4. Center Photo Frame OR Sacred Vector Motif Emblem
+            if (inviteState.photoImage) {
+                const pr = isSq ? 105 : 135;
+                ctx.save();
+                clipInvitePhotoShape(ctx, cx, curY + pr * 0.65, pr + 10, inviteState.photoFrame);
+                ctx.fillStyle = accent;
+                ctx.fill();
+
+                clipInvitePhotoShape(ctx, cx, curY + pr * 0.65, pr, inviteState.photoFrame);
+                ctx.clip();
+
+                const img = inviteState.photoImage;
+                const sc = Math.max((pr * 2.2) / img.width, (pr * 2.2) / img.height) * inviteState.photoZoom;
+                const dw = img.width * sc;
+                const dh = img.height * sc;
+                ctx.drawImage(img, cx - dw / 2 + inviteState.photoPanX, (curY + pr * 0.65) - dh / 2 + inviteState.photoPanY, dw, dh);
+                ctx.restore();
+                curY += isSq ? 215 : 275;
+            } else if (inviteState.showMotif) {
+                const mr = isSq ? 66 : 82;
+                drawVectorMotifEmblem(ctx, cx, curY + mr * 0.45, mr, inviteState.motif, primary, accent);
+                curY += isSq ? 145 : 185;
+            }
+
+            // 5. Event / Celebration Title Banner
+            ctx.textAlign = 'center';
+            ctx.fillStyle = primary;
+            drawFittedLine(ctx, d.eventTitle || 'CELEBRATION INVITATION', cx, curY, safeW, isSq ? 54 : 64, '900', inviteState.headingFont);
+
+            // Ornamental Gold Divider Line
+            curY += 24;
+            const divW = Math.min(safeW * 0.65, 620);
+            const lGrad = ctx.createLinearGradient(cx - divW / 2, 0, cx + divW / 2, 0);
+            lGrad.addColorStop(0, 'transparent');
+            lGrad.addColorStop(0.5, accent);
+            lGrad.addColorStop(1, 'transparent');
+            ctx.strokeStyle = lGrad;
+            ctx.lineWidth = 4;
+            ctx.beginPath(); ctx.moveTo(cx - divW / 2, curY); ctx.lineTo(cx + divW / 2, curY); ctx.stroke();
+
+            // 6. Host / Parents Blessing Paragraph
+            curY += isSq ? 46 : 58;
+            ctx.fillStyle = stock.bodyText;
+            ctx.font = `500 ${isSq ? 27 : 31}px "Playfair Display", "Noto Sans Devanagari", "Noto Sans Gujarati", serif`;
+            curY = drawWrappedBlock(ctx, d.hostLine || '', cx, curY, safeW - 40, isSq ? 40 : 48, 3);
+
+            // 7. Couple / Honoree Names Showcase
+            curY += isSq ? 82 : 112;
+            const hasSecond = (d.personTwo || '').trim().length > 0;
+            const nameFontSize = inviteState.namesFont === 'Great Vibes' ? (isSq ? 96 : 118) : (isSq ? 68 : 84);
+
+            ctx.fillStyle = primary;
+            drawFittedLine(ctx, d.personOne || '', cx, curY, safeW, nameFontSize, '700', inviteState.namesFont);
+
+            if (hasSecond) {
+                curY += isSq ? 52 : 68;
+                ctx.fillStyle = accent;
+                ctx.font = `italic 700 ${isSq ? 34 : 42}px "Playfair Display", serif`;
+                ctx.fillText(d.connector || 'weds', cx, curY);
+
+                curY += isSq ? 74 : 96;
+                ctx.fillStyle = primary;
+                drawFittedLine(ctx, d.personTwo, cx, curY, safeW, nameFontSize, '700', inviteState.namesFont);
+            }
+
+            if (d.familySub) {
+                curY += isSq ? 42 : 54;
+                ctx.fillStyle = stock.subText;
+                drawFittedLine(ctx, d.familySub, cx, curY, safeW, isSq ? 25 : 29, '600', 'Poppins');
+            }
+
+            // 8. Date, Time & Sub-Events Ornamental Box
+            curY += isSq ? 44 : 64;
+            const boxW = safeW - 30;
+            const boxH = d.subEvents ? (isSq ? 195 : 245) : (isSq ? 145 : 185);
+            ctx.fillStyle = stock.boxBg;
+            drawRoundRect(ctx, cx - boxW / 2, curY, boxW, boxH, 22);
+            ctx.fill();
+            ctx.strokeStyle = accent;
+            ctx.lineWidth = 3;
+            ctx.stroke();
+
+            ctx.fillStyle = secondary;
+            drawFittedLine(ctx, `📅  ${d.eventDate || ''}`, cx, curY + (isSq ? 52 : 66), boxW - 50, isSq ? 34 : 40, '800', 'Cinzel');
+
+            ctx.fillStyle = stock.bodyText;
+            drawFittedLine(ctx, `⏰  ${d.eventTime || ''}`, cx, curY + (isSq ? 102 : 128), boxW - 50, isSq ? 28 : 33, '700', 'Poppins');
+
+            if (d.subEvents) {
+                ctx.fillStyle = accent;
+                drawFittedLine(ctx, d.subEvents, cx, curY + (isSq ? 154 : 194), boxW - 50, isSq ? 24 : 28, '700', 'Poppins');
+            }
+
+            curY += boxH + (isSq ? 48 : 68);
+
+            // 9. Venue Address + Optional Google Maps / RSVP QR Code
+            const bottomLimit = H - (isSq ? 115 : 140);
+            if (inviteState.showVenueQR && d.qrLink) {
+                const qrSize = isSq ? 145 : 175;
+                const textMaxW = safeW - qrSize - 40;
+                const textCenterX = (cx - safeW / 2) + textMaxW / 2;
+
+                ctx.textAlign = 'center';
+                ctx.fillStyle = accent;
+                ctx.font = `800 ${isSq ? 24 : 28}px "Cinzel", serif`;
+                ctx.fillText('📍 VENUE & CELEBRATION ADDRESS', textCenterX, curY);
+
+                ctx.fillStyle = stock.bodyText;
+                ctx.font = `600 ${isSq ? 24 : 28}px "Poppins", "Noto Sans Devanagari", sans-serif`;
+                const endAddrY = drawWrappedBlock(ctx, d.venueAddress || '', textCenterX, curY + 40, textMaxW, isSq ? 34 : 40, 2);
+
+                ctx.fillStyle = secondary;
+                drawFittedLine(ctx, d.rsvpText || '', textCenterX, Math.min(bottomLimit, endAddrY + 46), textMaxW, isSq ? 24 : 28, '700', 'Poppins');
+
+                // QR on right
+                const qrX = cx + safeW / 2 - qrSize;
+                const qrY = curY - 18;
+                drawVenueQRCode(ctx, d.qrLink, qrX, qrY, qrSize, '#0f172a', '#ffffff');
+                ctx.fillStyle = stock.subText;
+                ctx.font = '700 18px "Poppins", sans-serif';
+                ctx.fillText('SCAN VENUE MAP', qrX + qrSize / 2, qrY + qrSize + 24);
+            } else {
+                ctx.textAlign = 'center';
+                ctx.fillStyle = accent;
+                ctx.font = `800 ${isSq ? 26 : 30}px "Cinzel", serif`;
+                ctx.fillText('📍 VENUE & CELEBRATION ADDRESS', cx, curY);
+
+                ctx.fillStyle = stock.bodyText;
+                ctx.font = `600 ${isSq ? 26 : 30}px "Poppins", "Noto Sans Devanagari", sans-serif`;
+                const endY = drawWrappedBlock(ctx, d.venueAddress || '', cx, curY + 44, safeW - 40, isSq ? 36 : 42, 2);
+
+                ctx.fillStyle = secondary;
+                drawFittedLine(ctx, d.rsvpText || '', cx, Math.min(bottomLimit, endY + 52), safeW - 40, isSq ? 26 : 30, '700', 'Poppins');
+            }
+        }
+
+        /********************************************************************
+         * 5. 150+ TEMPLATES GALLERY UI & FILTERING
+         ********************************************************************/
+        function renderInviteCategoryPills() {
+            const box = document.getElementById('categoryPillsBox');
+            box.innerHTML = INVITE_CATEGORIES.map(c => {
+                const active = inviteState.catFilter === c.id;
+                return `
+                    <button onclick="setInviteCategory('${c.id}')" class="shrink-0 px-3 py-1.5 rounded-full text-xs font-bold transition flex items-center gap-1.5 ${active ? 'bg-rose-600 text-white shadow' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'}">
+                        <span>${c.icon}</span>
+                        <span>${c.name}</span>
+                        <span class="px-1.5 rounded-full text-[10px] ${active ? 'bg-black/25 text-white' : 'bg-slate-200 dark:bg-slate-700'}">${c.count}</span>
+                    </button>`;
+            }).join('');
+        }
+
+        function setInviteCategory(cat) {
+            inviteState.catFilter = cat;
+            renderInviteCategoryPills();
+            filterTemplatesGrid();
+        }
+
+        function setRatioFilter(r) {
+            inviteState.ratioFilter = r;
+            ['all', 'portrait', 'square'].forEach(k => {
+                const b = document.getElementById(`ratioBtn-${k}`);
+                b.className = (k === r)
+                    ? 'px-2.5 py-1 rounded-md bg-rose-600 text-white'
+                    : 'px-2.5 py-1 rounded-md text-slate-600 dark:text-slate-300';
+            });
+            filterTemplatesGrid();
+        }
+
+        function buildInviteThumbnailSVG(t) {
+            const stock = getCardstockTheme(t.cardstock);
+            const isSq = t.aspectRatio === 'square';
+            if (isSq) {
+                return `
+                <svg viewBox="0 0 120 120" class="w-full h-24 rounded-lg border border-slate-300/40 dark:border-slate-700/70 shadow-inner">
+                    <rect width="120" height="120" rx="8" fill="${stock.bg1}"/>
+                    <rect x="7" y="7" width="106" height="106" rx="4" fill="none" stroke="${t.accent}" stroke-width="3"/>
+                    <circle cx="60" cy="26" r="10" fill="${t.accent}"/>
+                    <rect x="28" y="43" width="64" height="7" rx="3.5" fill="${t.primary}"/>
+                    <rect x="34" y="57" width="52" height="8" rx="4" fill="${t.secondary}"/>
+                    <rect x="24" y="73" width="72" height="18" rx="4" fill="none" stroke="${t.accent}" stroke-width="1.5"/>
+                    <rect x="36" y="100" width="48" height="5" rx="2.5" fill="${t.primary}"/>
+                </svg>`;
+            }
+            return `
+            <svg viewBox="0 0 100 140" class="w-full h-24 rounded-lg border border-slate-300/40 dark:border-slate-700/70 shadow-inner">
+                <rect width="100" height="140" rx="8" fill="${stock.bg1}"/>
+                <rect x="6" y="6" width="88" height="128" rx="4" fill="none" stroke="${t.accent}" stroke-width="3"/>
+                <circle cx="50" cy="27" r="10" fill="${t.accent}"/>
+                <rect x="22" y="45" width="56" height="7" rx="3.5" fill="${t.primary}"/>
+                <rect x="26" y="60" width="48" height="9" rx="4.5" fill="${t.secondary}"/>
+                <rect x="20" y="78" width="60" height="24" rx="5" fill="none" stroke="${t.accent}" stroke-width="1.5"/>
+                <rect x="28" y="112" width="44" height="5" rx="2.5" fill="${t.primary}"/>
+            </svg>`;
+        }
+
+        function filterTemplatesGrid() {
+            const q = (document.getElementById('tplSearchBox')?.value || '').toLowerCase().trim();
+            const list = ALL_INVITE_TEMPLATES.filter(t => {
+                const matchCat = inviteState.catFilter === 'all' || t.category === inviteState.catFilter;
+                const matchRatio = inviteState.ratioFilter === 'all' || t.aspectRatio === inviteState.ratioFilter;
+                const matchQ = !q || t.name.toLowerCase().includes(q) || t.code.toLowerCase().includes(q) || t.category.includes(q);
+                return matchCat && matchRatio && matchQ;
+            });
+
+            document.getElementById('tplCountLabel').textContent = `Showing ${list.length} of ${ALL_INVITE_TEMPLATES.length} templates`;
+
+            const grid = document.getElementById('templatesCardsGrid');
+            grid.innerHTML = list.map(t => {
+                const sel = t.id === inviteState.activeTplId;
+                return `
+                    <div onclick="selectInviteTemplateById(${t.id})" class="cursor-pointer rounded-xl p-2 border transition flex flex-col justify-between ${sel ? 'bg-rose-600/10 border-rose-500 ring-2 ring-rose-500/40' : 'bg-slate-50 dark:bg-slate-800/70 border-slate-200 dark:border-slate-700/80 hover:border-amber-400'}">
+                        ${buildInviteThumbnailSVG(t)}
+                        <div class="mt-2 flex items-center justify-between gap-1">
+                            <span class="text-[11px] font-bold truncate">${t.name}</span>
+                            <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-700 uppercase">${t.aspectRatio === 'square' ? '1:1' : '5×7'}</span>
+                        </div>
+                        <div class="flex items-center justify-between mt-1">
+                            <span class="text-[10px] text-slate-400 capitalize truncate">${t.category}</span>
+                            <div class="flex items-center gap-1 shrink-0">
+                                <span class="w-2.5 h-2.5 rounded-full" style="background:${t.primary}"></span>
+                                <span class="w-2.5 h-2.5 rounded-full" style="background:${t.accent}"></span>
+                            </div>
+                        </div>
+                    </div>`;
+            }).join('');
+        }
+
+        function selectInviteTemplateById(id) {
+            const t = ALL_INVITE_TEMPLATES.find(x => x.id === id);
+            if (!t) return;
+
+            inviteState.activeTplId = t.id;
+            inviteState.aspectRatio = t.aspectRatio;
+            inviteState.borderTheme = t.borderTheme;
+            inviteState.cardstock = t.cardstock;
+            inviteState.motif = t.motif;
+            inviteState.primaryColor = t.primary;
+            inviteState.secondaryColor = t.secondary;
+            inviteState.accentColor = t.accent;
+            inviteState.headingFont = t.headingFont;
+            inviteState.namesFont = t.namesFont;
+
+            document.getElementById('sel_aspectRatio').value = t.aspectRatio;
+            document.getElementById('sel_borderTheme').value = t.borderTheme;
+            document.getElementById('sel_cardstock').value = t.cardstock;
+            document.getElementById('clr_primary').value = t.primary;
+            document.getElementById('hex_primary').value = t.primary;
+            document.getElementById('clr_secondary').value = t.secondary;
+            document.getElementById('hex_secondary').value = t.secondary;
+            document.getElementById('clr_accent').value = t.accent;
+            document.getElementById('hex_accent').value = t.accent;
+            document.getElementById('sel_headingFont').value = t.headingFont;
+            document.getElementById('sel_namesFont').value = t.namesFont;
+
+            highlightMotifBtn(t.motif);
+            document.getElementById('headerTplBadge').textContent = `${t.code} ${t.name}`;
+            filterTemplatesGrid();
+            renderInvitationCanvas();
+        }
+
+        function resetTemplateDesign() {
+            selectInviteTemplateById(inviteState.activeTplId);
+            showInviteToast('Restored default template theme');
+        }
+
+        function stepInviteTemplate(delta) {
+            let next = inviteState.activeTplId + delta;
+            if (next < 1) next = ALL_INVITE_TEMPLATES.length;
+            if (next > ALL_INVITE_TEMPLATES.length) next = 1;
+            selectInviteTemplateById(next);
+            showInviteToast(`Loaded Template #${String(next).padStart(3, '0')}`);
+        }
+
+        function pickRandomInviteTemplate() {
+            const rnd = Math.floor(Math.random() * ALL_INVITE_TEMPLATES.length) + 1;
+            selectInviteTemplateById(rnd);
+            showInviteToast(`🎲 Loaded Random Design #${String(rnd).padStart(3, '0')}`);
+        }
+
+        function flipCardAspect() {
+            inviteState.aspectRatio = inviteState.aspectRatio === 'portrait' ? 'square' : 'portrait';
+            document.getElementById('sel_aspectRatio').value = inviteState.aspectRatio;
+            renderInvitationCanvas();
+            showInviteToast(`Switched to ${inviteState.aspectRatio === 'square' ? '1:1 WhatsApp Square' : '5×7 Print Portrait'}`);
+        }
+
+        /********************************************************************
+         * 6. FORM SYNC, MULTILINGUAL PRESETS, MOTIFS & PHOTO CONTROLS
+         ********************************************************************/
+        function syncInviteFields() {
+            const keys = [
+                'mantra', 'eventTitle', 'hostLine', 'personOne', 'connector',
+                'personTwo', 'familySub', 'eventDate', 'eventTime', 'subEvents',
+                'venueAddress', 'rsvpText', 'qrLink'
+            ];
+            keys.forEach(k => {
+                const el = document.getElementById(`inp_${k}`);
+                if (el) inviteState.data[k] = el.value;
+            });
+            renderInvitationCanvas();
+        }
+
+        function syncDesignControls() {
+            inviteState.aspectRatio = document.getElementById('sel_aspectRatio').value;
+            inviteState.borderTheme = document.getElementById('sel_borderTheme').value;
+            inviteState.cardstock = document.getElementById('sel_cardstock').value;
+            inviteState.photoFrame = document.getElementById('sel_photoFrame').value;
+            inviteState.primaryColor = document.getElementById('clr_primary').value;
+            inviteState.secondaryColor = document.getElementById('clr_secondary').value;
+            inviteState.accentColor = document.getElementById('clr_accent').value;
+
+            document.getElementById('hex_primary').value = inviteState.primaryColor;
+            document.getElementById('hex_secondary').value = inviteState.secondaryColor;
+            document.getElementById('hex_accent').value = inviteState.accentColor;
+
+            inviteState.headingFont = document.getElementById('sel_headingFont').value;
+            inviteState.namesFont = document.getElementById('sel_namesFont').value;
+            inviteState.showMotif = document.getElementById('chk_showMotif').checked;
+            inviteState.showVenueQR = document.getElementById('chk_showVenueQR').checked;
+
+            renderInvitationCanvas();
+        }
+
+        function syncColorHexInput(which) {
+            const val = document.getElementById(`hex_${which}`).value.trim();
+            if (/^#[0-9A-Fa-f]{6}$/.test(val)) {
+                document.getElementById(`clr_${which}`).value = val;
+                syncDesignControls();
+            }
+        }
+
+        function highlightMotifBtn(m) {
+            MOTIF_TYPES.forEach(t => {
+                const btn = document.getElementById(`motifBtn-${t}`);
+                if (!btn) return;
+                btn.className = (t === m)
+                    ? 'motif-btn p-2.5 rounded-xl border font-bold text-center transition bg-amber-500/15 border-amber-500 text-amber-600 dark:text-amber-300'
+                    : 'motif-btn p-2.5 rounded-xl border font-bold text-center transition bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700';
+            });
+        }
+
+        function selectVectorMotif(m) {
+            inviteState.motif = m;
+            inviteState.showMotif = true;
+            document.getElementById('chk_showMotif').checked = true;
+            highlightMotifBtn(m);
+            renderInvitationCanvas();
+        }
+
+        const MULTILINGUAL_PRESETS = {
+            hindi_vivah: {
+                mantra: '|| वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ || श्री गणेशाय नमः ||',
+                eventTitle: 'शुभ विवाह निमंत्रण',
+                hostLine: 'श्रीमती सुनीता देवी एवं श्री राजेश्वर प्रसाद शर्मा अपने सुपुत्र के पावन परिणयोत्सव पर आपको सपरिवार सादर आमंत्रित करते हैं',
+                personOne: 'चिरंजीवी आरव',
+                connector: 'संग',
+                personTwo: 'आयुष्मती अनन्या',
+                familySub: '(सुपुत्री: श्रीमती कविता एवं श्री महेन्द्र वर्मा, नई दिल्ली)',
+                eventDate: 'रविवार, 14 दिसम्बर 2026',
+                eventTime: 'शुभ बारात: सायं 7:00 बजे • प्रीतिभोज: रात्रि 8:30 बजे',
+                subEvents: 'हल्दी एवं मेहंदी: 12 दिसम्बर • महिला संगीत: 13 दिसम्बर',
+                venueAddress: 'द इम्पीरियल ग्रैंड पैलेस एंड लॉन्स, एन.एच.-48, गुरुग्राम',
+                rsvpText: 'दर्शनाभिलाषी: समस्त शर्मा परिवार • मो: +91 98765 43210'
+            },
+            gujarati_lagna: {
+                mantra: '|| શ્રી ગણેશાય નમઃ || મંગલમ ભગવાન વિષ્ણુ ||',
+                eventTitle: 'શુભ લગ્ન કંકોત્રી',
+                hostLine: 'શ્રીમતી હંસાબેન તથા શ્રી રમેશભાઈ પટેલ ના સુપુત્ર ના શુભ લગ્ન પ્રસંગે આપશ્રી ને સહકુટુંબ પધારવા ભાવભર્યું આમંત્રણ છે',
+                personOne: 'ચિ. આરવ',
+                connector: 'સંગે',
+                personTwo: 'ચિ. અનન્યા',
+                familySub: '(શ્રીમતી મીનાબેન તથા શ્રી સુરેશભાઈ શાહ ની સુપુત્રી, અમદાવાદ)',
+                eventDate: 'રવિવાર, ૧૪ ડિસેમ્બર ૨૦૨૬',
+                eventTime: 'જાન આગમન: સાંજે ૬:૩૦ કલાકે • ભોજન સમારંભ: ૮:૦૦ કલાકે',
+                subEvents: 'મંડપ મુહૂર્ત: ૧૩ ડિસેમ્બર • રાસ ગરબા: રાત્રે ૯:૦૦ કલાકે',
+                venueAddress: 'રોયલ પાર્ટી પ્લોટ અને બેન્ક્વેટ હોલ, એસ.જી. હાઈવે, અમદાવાદ',
+                rsvpText: 'નિમંત્રક: સમસ્ત પટેલ પરિવાર • મો: +91 98765 43210'
+            },
+            english_wedding: {
+                mantra: 'WITH THE BLESSINGS OF THE ALMIGHTY',
+                eventTitle: 'ROYAL WEDDING INVITATION',
+                hostLine: 'Mrs. Sunita & Mr. Rajeshwar Sharma joyfully request the pleasure of your company at the wedding celebration of their son',
+                personOne: 'Aarav Sharma',
+                connector: '&',
+                personTwo: 'Ananya Verma',
+                familySub: '(Daughter of Mrs. Kavita & Mr. Mahendra Verma)',
+                eventDate: 'Sunday, 14th December 2026',
+                eventTime: 'Ceremony: 7:00 PM • Reception Dinner: 8:30 PM',
+                subEvents: 'Mehendi & Haldi: 12 Dec • Cocktail & Sangeet: 13 Dec',
+                venueAddress: 'The Imperial Grand Palace & Lawns, NH-48, Gurugram',
+                rsvpText: 'RSVP: Sharma & Verma Families • +91 98765 43210'
+            },
+            birthday_party: {
+                mantra: '✨ HIP HIP HOORAY • IT’S PARTY TIME ✨',
+                eventTitle: '1ST BIRTHDAY CELEBRATION',
+                hostLine: 'Join us for fun, games, cake, and magical memories as our little prince turns ONE!',
+                personOne: 'Master Vivaan',
+                connector: 'Turns 1!',
+                personTwo: '',
+                familySub: 'Hosted with love by Neha & Vikram Malhotra',
+                eventDate: 'Saturday, 28th November 2026',
+                eventTime: 'Party Begins: 6:30 PM • Cake Cutting: 8:00 PM',
+                subEvents: 'Theme: Royal Safari • Magic Show & Dinner Included',
+                venueAddress: 'Celebration Banquet Hall, Club Road, Punjabi Bagh, New Delhi',
+                rsvpText: 'RSVP: Malhotra Family • +91 98111 22334'
+            },
+            griha_pravesh: {
+                mantra: '|| श्री गणेशाय नमः || शुभ गृह प्रवेश ||',
+                eventTitle: 'GRIHA PRAVESH INVITATION',
+                hostLine: 'With immense joy and gratitude to the Almighty, we cordially invite you and your family to bless our new home at our Griha Pravesh Ceremony',
+                personOne: 'Shanti Niwas',
+                connector: 'New Home Blessing',
+                personTwo: '',
+                familySub: 'Smt. Pooja & Shri Anil Kumar Agarwal',
+                eventDate: 'Friday, 04th December 2026',
+                eventTime: 'Havan & Puja: 10:30 AM • Lunch (Prasad): 1:00 PM',
+                subEvents: 'Vastu Shanti Puja & Satyanarayan Katha',
+                venueAddress: 'Villa No. 24, Green Valley Enclave, Sector 50, Noida',
+                rsvpText: 'RSVP: Agarwal Family • +91 98201 55667'
+            },
+            diwali_wishes: {
+                mantra: '|| शुभ दीपावली || HAPPY DEEPAVALI ||',
+                eventTitle: 'WARM DIWALI GREETINGS',
+                hostLine: 'May the divine light of diyas illuminate your home with boundless happiness, good health, peace, and prosperity throughout the year.',
+                personOne: 'SOLU DIGITAL FAMILY',
+                connector: 'Wishes You',
+                personTwo: 'A Prosperous New Year',
+                familySub: 'Warmest Festive Regards from Our Entire Team',
+                eventDate: 'Festival of Lights • 2026',
+                eventTime: 'Shubh Labh • Riddhi Siddhi',
+                subEvents: '',
+                venueAddress: 'SOLU DIGITAL TECHNOLOGIES • New Delhi, India',
+                rsvpText: 'www.soludigital.in • +91 98765 43210'
+            }
+        };
+
+        function loadInvitePreset(key) {
+            const p = MULTILINGUAL_PRESETS[key];
+            if (!p) return;
+            Object.keys(p).forEach(k => {
+                inviteState.data[k] = p[k];
+                const el = document.getElementById(`inp_${k}`);
+                if (el) el.value = p[k];
+            });
+
+            if (key === 'birthday_party') selectVectorMotif('cake');
+            else if (key === 'griha_pravesh') selectVectorMotif('kalash');
+            else if (key === 'diwali_wishes') selectVectorMotif('om');
+            else selectVectorMotif('ganesha');
+
+            renderInvitationCanvas();
+            showInviteToast(`✨ Loaded ${key.replace('_', ' ').toUpperCase()} Preset`);
+        }
+
+        function handlePhotoUpload(event) {
+            const file = event.target.files?.[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = new Image();
+                img.onload = () => {
+                    inviteState.photoImage = img;
+                    inviteState.photoZoom = 1;
+                    inviteState.photoPanX = 0;
+                    inviteState.photoPanY = 0;
+                    document.getElementById('rng_photoZoom').value = 1;
+                    document.getElementById('rng_photoX').value = 0;
+                    document.getElementById('rng_photoY').value = 0;
+                    document.getElementById('lbl_zoom').textContent = '100%';
+                    renderInvitationCanvas();
+                    showInviteToast('📸 Photo added inside ornamental frame!');
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function clearUploadedPhoto() {
+            inviteState.photoImage = null;
+            renderInvitationCanvas();
+            showInviteToast('Restored sacred top emblem');
+        }
+
+        function updatePhotoPanZoom() {
+            inviteState.photoZoom = parseFloat(document.getElementById('rng_photoZoom').value) || 1;
+            inviteState.photoPanX = parseInt(document.getElementById('rng_photoX').value, 10) || 0;
+            inviteState.photoPanY = parseInt(document.getElementById('rng_photoY').value, 10) || 0;
+            document.getElementById('lbl_zoom').textContent = `${Math.round(inviteState.photoZoom * 100)}%`;
+            renderInvitationCanvas();
+        }
+
+        /********************************************************************
+         * 7. HD PNG EXPORT & ZERO-BLANK PRINT / PDF ENGINE
+         ********************************************************************/
+        function triggerDownload(dataUrl, filename) {
+            const a = document.createElement('a');
+            a.href = dataUrl;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        function downloadInvitePNG() {
+            renderInvitationCanvas();
+            const canvas = document.getElementById('inviteMainCanvas');
+            const safeName = (inviteState.data.personOne || 'Invitation_Card').replace(/[^a-zA-Z0-9_-]/g, '_');
+            triggerDownload(canvas.toDataURL('image/png', 1.0), `${safeName}_300DPI_Card.png`);
+            showInviteToast('⬇️ Downloaded 300-DPI HD PNG Card!');
+        }
+
+        function buildPrintSheetHTML() {
+            renderInvitationCanvas();
+            const dataUrl = document.getElementById('inviteMainCanvas').toDataURL('image/png', 1.0);
+            const layout = document.getElementById('sel_printLayout')?.value || 'a4_2up';
+
+            if (layout === 'a4_2up') {
+                return {
+                    orientation: 'landscape',
+                    html: `
+                        <div class="invite-print-sheet" style="width:100%;display:flex;align-items:center;justify-content:center;gap:6mm;background:#fff;">
+                            <img src="${dataUrl}" style="width:132mm;height:auto;border:0.4mm dashed #64748b;display:block;" alt="Card 1"/>
+                            <div style="height:185mm;border-left:0.35mm dashed #94a3b8;"></div>
+                            <img src="${dataUrl}" style="width:132mm;height:auto;border:0.4mm dashed #64748b;display:block;" alt="Card 2"/>
+                        </div>`
+                };
+            }
+            return {
+                orientation: 'portrait',
+                html: `
+                    <div class="invite-print-sheet" style="width:100%;display:flex;align-items:center;justify-content:center;background:#fff;">
+                        <img src="${dataUrl}" style="width:100%;max-width:190mm;height:auto;display:block;" alt="Invitation Card"/>
+                    </div>`
+            };
+        }
+
+        function openPrintModal() {
+            renderModalSheetPreview();
+            document.getElementById('printModal').classList.remove('hidden');
+        }
+
+        function closePrintModal() {
+            document.getElementById('printModal').classList.add('hidden');
+        }
+
+        function renderModalSheetPreview() {
+            const { html, orientation } = buildPrintSheetHTML();
+            document.getElementById('modalSheetMount').innerHTML = html;
+            document.getElementById('modalPrintInfo').textContent =
+                orientation === 'landscape'
+                    ? 'A4 Landscape 2-Up Print Sheet (2 Cards with Cut Marks)'
+                    : 'Single Full-Page 300-DPI Print Card';
+        }
+
+        async function waitForDecodedImages(container) {
+            const imgs = Array.from(container.querySelectorAll('img'));
+            await Promise.all(imgs.map(async (img) => {
+                if (img.decode) {
+                    try { await img.decode(); } catch (e) {}
+                } else if (!img.complete) {
+                    await new Promise(res => { img.onload = res; img.onerror = res; });
+                }
+            }));
+        }
+
+        async function triggerDirectPrint() {
+            const mount = document.getElementById('printMountArea');
+            const { html, orientation } = buildPrintSheetHTML();
+            mount.innerHTML = html;
+
+            let pageStyle = document.getElementById('inviteDynamicPageStyle');
+            if (!pageStyle) {
+                pageStyle = document.createElement('style');
+                pageStyle.id = 'inviteDynamicPageStyle';
+                document.head.appendChild(pageStyle);
+            }
+            pageStyle.textContent = `@media print { @page { size: A4 ${orientation}; margin: 5mm; } }`;
+
+            showInviteToast('🖨️ Preparing 300-DPI Print / PDF Sheet...');
+            document.body.classList.add('is-printing');
+
+            await waitForDecodedImages(mount);
+
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    setTimeout(() => {
+                        try {
+                            window.print();
+                        } catch (e) {}
+                        setTimeout(() => {
+                            document.body.classList.remove('is-printing');
+                        }, 600);
+                    }, 180);
+                });
+            });
+        }
+
+        window.addEventListener('afterprint', () => {
+            document.body.classList.remove('is-printing');
+        });
+
+        function openNewTabPrintWindow() {
+            const { html, orientation } = buildPrintSheetHTML();
+            const win = window.open('', '_blank');
+            if (!win) {
+                showInviteToast('⚠️ Pop-up blocked! Click "Download 300-DPI A4 Sheet PNG" instead.', '⚠️');
+                return;
+            }
+            win.document.open();
+            win.document.write(`<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SOLU DIGITAL TOOLS — Printable Invitation PDF</title>
+    <style>
+        * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; box-sizing: border-box; }
+        body { margin: 0; padding: 0; background: #1e293b; font-family: sans-serif; }
+        .top { background: #0f172a; color: #fff; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .btn { background: #f59e0b; color: #090d16; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 800; cursor: pointer; }
+        .sheet { background: #fff; padding: 14px; margin: 16px auto; max-width: ${orientation === 'landscape' ? '297mm' : '210mm'}; }
+        @media print {
+            body { background: #fff !important; }
+            .top { display: none !important; }
+            .sheet { margin: 0 !important; padding: 0 !important; max-width: 100% !important; }
+            @page { size: A4 ${orientation}; margin: 5mm; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <strong>SOLU DIGITAL TOOLS — Invitation Print & PDF Ready</strong>
+        <button class="btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    </div>
+    <div class="sheet">${html}</div>
+    <script>window.onload = function() { setTimeout(function() { window.print(); }, 400); };<\/script>
+</body>
+</html>`);
+            win.document.close();
+        }
+
+        function downloadA4SheetPNG() {
+            renderInvitationCanvas();
+            const srcCanvas = document.getElementById('inviteMainCanvas');
+            // Landscape A4 @ 300 DPI: 3508 x 2480 px
+            const sheet = document.createElement('canvas');
+            sheet.width = 3508;
+            sheet.height = 2480;
+            const ctx = sheet.getContext('2d');
+
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, sheet.width, sheet.height);
+
+            const targetH = 2240;
+            const targetW = Math.round((srcCanvas.width / srcCanvas.height) * targetH);
+            const gap = 80;
+            const startX = (sheet.width - (targetW * 2 + gap)) / 2;
+            const startY = (sheet.height - targetH) / 2;
+
+            ctx.drawImage(srcCanvas, startX, startY, targetW, targetH);
+            ctx.drawImage(srcCanvas, startX + targetW + gap, startY, targetW, targetH);
+
+            // Dashed Cut Marks
+            ctx.strokeStyle = '#64748b';
+            ctx.lineWidth = 3;
+            ctx.setLineDash([18, 12]);
+            ctx.strokeRect(startX, startY, targetW, targetH);
+            ctx.strokeRect(startX + targetW + gap, startY, targetW, targetH);
+
+            triggerDownload(sheet.toDataURL('image/png', 1.0), `SOLU_A4_2UP_Invitation_Sheet_300DPI.png`);
+            showInviteToast('⬇️ Downloaded 300-DPI Full A4 Print Sheet PNG!');
+        }
+
+        /********************************************************************
+         * 8. TABS, THEME TOGGLE & INITIALIZATION
+         ********************************************************************/
+        function switchTab(tab) {
+            ['templates', 'content', 'emblem', 'design'].forEach(t => {
+                const pane = document.getElementById(`tabPane-${t}`);
+                const btn = document.getElementById(`tabBtn-${t}`);
+                if (t === tab) {
+                    pane.classList.remove('hidden');
+                    btn.className = 'flex flex-col items-center justify-center py-2 px-1 rounded-lg text-[11px] font-bold transition bg-rose-600 text-white shadow';
+                } else {
+                    pane.classList.add('hidden');
+                    btn.className = 'flex flex-col items-center justify-center py-2 px-1 rounded-lg text-[11px] font-bold transition text-slate-600 dark:text-slate-400 hover:bg-slate-200/70 dark:hover:bg-slate-800';
+                }
+            });
+        }
+
+        function toggleStudioTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+
+        let toastTimer = null;
+        function showInviteToast(msg, emoji = '✅') {
+            const pop = document.getElementById('toastPopup');
+            document.getElementById('toastMsg').textContent = msg;
+            document.getElementById('toastEmoji').textContent = emoji;
+            pop.classList.remove('translate-y-24', 'opacity-0');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                pop.classList.add('translate-y-24', 'opacity-0');
+            }, 2600);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            build150InviteTemplates();
+            renderInviteCategoryPills();
+            selectInviteTemplateById(1);
+        });
+    </script>
+</body>
+</html>
